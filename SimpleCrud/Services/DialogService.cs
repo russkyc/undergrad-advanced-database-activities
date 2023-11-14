@@ -43,6 +43,20 @@ public class DialogService
         var result = await dialog.ShowAsync();
         return result is ContentDialogResult.Primary;
     }
+    public async Task<bool> OpenNotifyDialog(string title, string message)
+    {
+        var dialog = new ContentDialog
+        {
+            Title = title,
+            Content = message,
+            IsPrimaryButtonEnabled = false,
+            IsSecondaryButtonEnabled = false,
+            CloseButtonText = "Okay"
+        };
+        
+        var result = await dialog.ShowAsync();
+        return result is ContentDialogResult.Primary;
+    }
     public async Task<bool> OpenStudentFormDialog(StudentManagementViewModel viewModel, string message)
     {
         var dialog = new ContentDialog

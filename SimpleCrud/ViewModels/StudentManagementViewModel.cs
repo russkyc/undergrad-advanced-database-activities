@@ -90,6 +90,15 @@ public partial class StudentManagementViewModel : ObservableObject
             return;
         }
 
+        var validation = ActiveStudent.AreStudentDetailsValid();
+
+        if (!validation.Result)
+        {
+            await _dialogService.OpenNotifyDialog("Student Management", validation.Message);
+            OpenStudentCreateDialog().SafeFireAndForget();
+            return;
+        }
+
         if (!await _dialogService.OpenPromptDialog("Student Management",
                 $"Add {ActiveStudent.FirstName} to Students?"))
         {
