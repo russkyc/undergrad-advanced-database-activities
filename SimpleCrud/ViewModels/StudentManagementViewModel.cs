@@ -87,16 +87,13 @@ public partial class StudentManagementViewModel : ObservableObject
     {
         ActiveStudent ??= new();
 
-        if (!await _dialogService
-                .OpenStudentFormDialog(this,
-                    "Add Student"))
+        if (!await _dialogService.OpenStudentFormDialog(this, "Add Student"))
         {
             return;
         }
 
-        if (!await _dialogService
-                .OpenPromptDialog("Student Management",
-                    $"Add {ActiveStudent.FirstName} to Students?"))
+        if (!await _dialogService.OpenPromptDialog("Student Management",
+                $"Add {ActiveStudent.FirstName} to Students?"))
         {
             ActiveStudent = null;
             return;
