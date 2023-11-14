@@ -1,0 +1,40 @@
+<windowing:AppWindow
+    x:Class="SimpleCrud.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:SimpleCrud.Views.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:entities="clr-namespace:Core.Entities;assembly=Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:SimpleCrud.Models"
+    xmlns:viewModels="clr-namespace:SimpleCrud.ViewModels"
+    xmlns:windowing="clr-namespace:FluentAvalonia.UI.Windowing;assembly=FluentAvalonia"
+    Title="SimpleCrud"
+    Width="500"
+    d:DesignHeight="450"
+    x:DataType="viewModels:StudentManagementViewModel"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Margin="12" RowDefinitions="Auto, *">
+        <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+            <Button
+                Grid.Column="1"
+                Command="{Binding OpenStudentCreateDialogCommand}"
+                Content="Add Student" />
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,12,0,0">
+            <ItemsControl ItemsSource="{Binding Students}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel VerticalAlignment="Top" Spacing="12" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.DataTemplates>
+                    <DataTemplate DataType="models:ObservableStudent">
+                        <components:StudentCard />
+                    </DataTemplate>
+                </ItemsControl.DataTemplates>
+            </ItemsControl>
+        </Grid>
+    </Grid>
+</windowing:AppWindow>

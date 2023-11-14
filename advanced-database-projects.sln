@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C7D0071C-91AE-477A-8E3C-99C58AF23B1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCrud", "SimpleCrud\SimpleCrud.csproj", "{13BE2ACD-B58D-40C9-B890-2174C44EB6BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DBDE95CE-B010-4B1D-A12F-93585617EE10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{58E4627D-E328-4DF6-971C-EBF30BAB60D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{4591D1AE-A8B2-4F2E-A867-B7772E9587DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7D0071C-91AE-477A-8E3C-99C58AF23B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D0071C-91AE-477A-8E3C-99C58AF23B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D0071C-91AE-477A-8E3C-99C58AF23B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D0071C-91AE-477A-8E3C-99C58AF23B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13BE2ACD-B58D-40C9-B890-2174C44EB6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13BE2ACD-B58D-40C9-B890-2174C44EB6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13BE2ACD-B58D-40C9-B890-2174C44EB6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13BE2ACD-B58D-40C9-B890-2174C44EB6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4591D1AE-A8B2-4F2E-A867-B7772E9587DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4591D1AE-A8B2-4F2E-A867-B7772E9587DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4591D1AE-A8B2-4F2E-A867-B7772E9587DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4591D1AE-A8B2-4F2E-A867-B7772E9587DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7D0071C-91AE-477A-8E3C-99C58AF23B1B} = {DBDE95CE-B010-4B1D-A12F-93585617EE10}
+		{13BE2ACD-B58D-40C9-B890-2174C44EB6BC} = {DBDE95CE-B010-4B1D-A12F-93585617EE10}
+		{4591D1AE-A8B2-4F2E-A867-B7772E9587DD} = {DBDE95CE-B010-4B1D-A12F-93585617EE10}
+	EndGlobalSection
+EndGlobal

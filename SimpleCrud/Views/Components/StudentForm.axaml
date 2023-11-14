@@ -1,0 +1,36 @@
+﻿<UserControl
+    x:Class="SimpleCrud.Views.Components.StudentForm"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:SimpleCrud.ViewModels"
+    Width="350"
+    x:DataType="viewModels:StudentManagementViewModel"
+    mc:Ignorable="d">
+    <StackPanel Spacing="12">
+        <TextBox
+            Name="FirstNameInput"
+            KeyDown="FirstNameInput_OnKeyDown"
+            Text="{Binding ActiveStudent.FirstName}"
+            Watermark="First Name" />
+        <TextBox
+            Name="MiddleNameInput"
+            KeyDown="MiddleNameInput_OnKeyDown"
+            Text="{Binding ActiveStudent.MiddleName}"
+            Watermark="Middle Name" />
+        <TextBox
+            Name="LastNameInput"
+            KeyDown="LastNameInput_OnKeyDown"
+            Text="{Binding ActiveStudent.LastName}"
+            Watermark="Last Name" />
+        <ComboBox
+            Name="CourseInput"
+            HorizontalAlignment="Stretch"
+            DisplayMemberBinding="{Binding CourseName}"
+            ItemsSource="{Binding Courses}"
+            PlaceholderText="Course"
+            SelectedValue="{Binding ActiveStudent.CourseCode}"
+            SelectedValueBinding="{Binding CourseCode}" />
+    </StackPanel>
+</UserControl>

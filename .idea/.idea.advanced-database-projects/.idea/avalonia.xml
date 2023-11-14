@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="SimpleCrud/App.axaml" value="SimpleCrud/SimpleCrud.csproj" />
+        <entry key="SimpleCrud/MainWindow.axaml" value="SimpleCrud/SimpleCrud.csproj" />
+        <entry key="SimpleCrud/Views/Components/AddStudentForm.axaml" value="SimpleCrud/SimpleCrud.csproj" />
+        <entry key="SimpleCrud/Views/Components/StudentCard.axaml" value="SimpleCrud/SimpleCrud.csproj" />
+        <entry key="SimpleCrud/Views/Components/StudentForm.axaml" value="SimpleCrud/SimpleCrud.csproj" />
+        <entry key="SimpleCrud/Views/MainWindow.axaml" value="SimpleCrud/SimpleCrud.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
