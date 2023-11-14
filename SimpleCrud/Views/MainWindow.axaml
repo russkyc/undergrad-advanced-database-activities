@@ -13,16 +13,25 @@
     Width="500"
     d:DesignHeight="450"
     x:DataType="viewModels:StudentManagementViewModel"
+    CanResize="False"
+    ExtendClientAreaToDecorationsHint="True"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid Margin="12" RowDefinitions="Auto, *">
-        <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+    <Grid Margin="12,0,12,12" RowDefinitions="36,Auto, *">
+        <Grid Grid.Row="0" IsHitTestVisible="False">
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontWeight="Medium"
+                Text="MongoDB Simple Crud" />
+        </Grid>
+        <Grid Grid.Row="1" ColumnDefinitions="*, Auto">
             <Button
                 Grid.Column="1"
                 Command="{Binding OpenStudentCreateDialogCommand}"
                 Content="Add Student" />
         </Grid>
-        <Grid Grid.Row="1" Margin="0,12,0,0">
+        <Grid Grid.Row="2" Margin="0,12,0,0">
             <ItemsControl ItemsSource="{Binding Students}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
