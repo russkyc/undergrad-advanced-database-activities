@@ -64,11 +64,9 @@ public partial class StudentManagementViewModel : ObservableObject
 
     void RegisterObserver()
     {
-        WeakReferenceMessenger.Default
-            .Register<EditStudentEvent>(this,
+        WeakReferenceMessenger.Default.Register<EditStudentEvent>(this,
                 async (_, args) => await OnEditStudent(args));
-        WeakReferenceMessenger.Default
-            .Register<RemoveStudentEvent>(this,
+        WeakReferenceMessenger.Default.Register<RemoveStudentEvent>(this,
                 async (_, args) => await OnRemoveStudent(args));
     }
 
