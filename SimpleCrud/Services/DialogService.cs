@@ -43,7 +43,7 @@ public class DialogService
         var result = await dialog.ShowAsync();
         return result is ContentDialogResult.Primary;
     }
-    public async Task<bool> OpenNotifyDialog(string title, string message)
+    public async Task OpenNotifyDialog(string title, string message)
     {
         var dialog = new ContentDialog
         {
@@ -53,9 +53,7 @@ public class DialogService
             IsSecondaryButtonEnabled = false,
             CloseButtonText = "Okay"
         };
-        
-        var result = await dialog.ShowAsync();
-        return result is ContentDialogResult.Primary;
+        await dialog.ShowAsync();
     }
     public async Task<bool> OpenStudentFormDialog(StudentManagementViewModel viewModel, string message)
     {
