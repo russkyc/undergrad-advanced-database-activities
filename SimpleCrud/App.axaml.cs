@@ -1,10 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Infrastructure.Data;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using MongoFramework;
 using SimpleCrud.Services;
 using SimpleCrud.Views;
 
