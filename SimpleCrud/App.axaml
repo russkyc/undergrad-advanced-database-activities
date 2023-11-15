@@ -5,6 +5,6 @@
     xmlns:styling="clr-namespace:FluentAvalonia.Styling;assembly=FluentAvalonia"
     RequestedThemeVariant="Dark">
     <Application.Styles>
-        <styling:FluentAvaloniaTheme CustomAccentColor="#981CFF" />
+        <styling:FluentAvaloniaTheme CustomAccentColor="#13aa52" />
     </Application.Styles>
 </Application>
