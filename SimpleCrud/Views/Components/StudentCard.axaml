@@ -2,12 +2,32 @@
     x:Class="SimpleCrud.Views.Components.StudentCard"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:SimpleCrud.Views.Components"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="clr-namespace:SimpleCrud.Models"
     d:DesignWidth="800"
     x:DataType="models:ObservableStudent"
     mc:Ignorable="d">
+    <UserControl.Styles>
+        <Style Selector="components|StudentCard">
+            <Style.Animations>
+                <Animation FillMode="Forward" Duration="0:0:0.3">
+                    <Animation.Easing>
+                        <CubicEaseOut />
+                    </Animation.Easing>
+                    <KeyFrame Cue="0%">
+                        <Setter Property="Opacity" Value="0" />
+                        <Setter Property="TranslateTransform.Y" Value="10" />
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Opacity" Value="1" />
+                        <Setter Property="TranslateTransform.Y" Value="0" />
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+    </UserControl.Styles>
     <Border Background="#252525" CornerRadius="7">
         <Grid ColumnDefinitions="Auto, *, Auto, Auto">
             <Border

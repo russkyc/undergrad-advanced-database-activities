@@ -107,9 +107,8 @@ public partial class StudentManagementViewModel : ObservableObject
         }
         
         _dbContext.Students.Add(ActiveStudent);
-        _dbContext.SaveChangesAsync()
-            .ContinueWith(_ => InitializeCollections())
-            .SafeFireAndForget();
+        await _dbContext.SaveChangesAsync()
+            .ContinueWith(_ => Students.Add(ActiveStudent.ToObservableStudent()));
         ActiveStudent = null;
     }
     
