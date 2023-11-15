@@ -21,20 +21,35 @@
 // SOFTWARE.
 
 using Core.Entities;
-using MongoFramework;
 
-#pragma warning disable CS8618
-
-// ReSharper disable UnusedAutoPropertyAccessor.Global
 namespace Infrastructure.Data;
 
-public class DbContext : MongoDbContext
+public static class Seeder
 {
-    public DbContext(IMongoDbConnection connection) : base(connection)
+    public static void SeedData(this DbContext context)
     {
-        this.SeedData();
+        if (context.Courses.Any())
+        {
+            return;
+        }
+        context.Courses.AddRange(new[]
+        {
+            new Course
+            {
+                CourseCode = "IT001",
+                CourseName = "Bachelor of Science in Information Technology"
+            },
+            new Course
+            {
+                CourseCode = "CS001",
+                CourseName = "Bachelor of Science in Computer Science"
+            },
+            new Course
+            {
+                CourseCode = "EN001",
+                CourseName = "Bachelor of Science in Computer Engineering"
+            }
+        });
+        context.SaveChanges();
     }
-
-    public MongoDbSet<Student> Students { get; set; }
-    public MongoDbSet<Course> Courses { get; set; }
 }
