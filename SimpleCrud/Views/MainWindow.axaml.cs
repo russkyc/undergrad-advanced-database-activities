@@ -1,6 +1,4 @@
 using Avalonia.Controls;
-using Microsoft.Extensions.DependencyInjection;
-using SimpleCrud.Services;
 using SimpleCrud.ViewModels;
 
 namespace SimpleCrud.Views;

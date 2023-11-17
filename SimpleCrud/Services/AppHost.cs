@@ -22,9 +22,9 @@
 
 using System;
 using Infrastructure.Data;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using MongoFramework;
+using Russkyc.DependencyInjection.Implementations;
+using Russkyc.DependencyInjection.Interfaces;
 using SimpleCrud.ViewModels;
 using SimpleCrud.Views;
 
@@ -32,21 +32,15 @@ namespace SimpleCrud.Services;
 
 public static class AppHost
 {
-    public static IServiceProvider? Services { get; private set; }
-    public static IHost Build()
+    public static IServicesContainer Build()
     {
-        var builder = Host.CreateApplicationBuilder();
         var connection = MongoDbConnection.FromConnectionString(Environment.GetEnvironmentVariable("MONGODB_URI"));
-        
-        // Register services
-        builder.Services.AddSingleton<DbContext>(_ => new DbContext(connection));
-        builder.Services.AddSingleton<DialogService>();
-        builder.Services.AddSingleton<StudentManagementViewModel>();
-        builder.Services.AddSingleton<MainWindow>();
 
-        var host = builder.Build();
-        Services = host.Services;
-        
-        return host;
+        return new ServicesCollection()
+            .Add(new DbContext(connection))
+            .AddSingleton<DialogService>()
+            .AddSingleton<StudentManagementViewModel>()
+            .AddSingleton<MainWindow>()
+            .Build();
     }
 }

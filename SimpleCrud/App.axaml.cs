@@ -1,7 +1,6 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Microsoft.Extensions.DependencyInjection;
 using SimpleCrud.Services;
 using SimpleCrud.Views;
 
@@ -17,11 +16,11 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        var host = AppHost.Build();
+        var container = AppHost.Build();
         
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = host.Services.GetService<MainWindow>();
+            desktop.MainWindow = container.Resolve<MainWindow>();
         }
 
         base.OnFrameworkInitializationCompleted();
