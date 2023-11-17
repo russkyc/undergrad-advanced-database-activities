@@ -29,7 +29,7 @@
                 </StackPanel>
             </Button>
         </Grid>
-        <Grid Grid.Row="1" Margin="0,12,0,0">
+        <ScrollViewer Grid.Row="1" Margin="0,12,0,0">
             <ItemsControl ItemsSource="{Binding Students}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -42,6 +42,6 @@
                     </DataTemplate>
                 </ItemsControl.DataTemplates>
             </ItemsControl>
-        </Grid>
+        </ScrollViewer>
     </Grid>
 </windowing:AppWindow>
