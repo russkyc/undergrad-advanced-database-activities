@@ -36,7 +36,7 @@ public static class AppHost
     public static IHost Build()
     {
         var builder = Host.CreateApplicationBuilder();
-        var connection = MongoDbConnection.FromConnectionString("mongodb://localhost:27017/SampleCrudDb");
+        var connection = MongoDbConnection.FromConnectionString(Environment.GetEnvironmentVariable("MONGODB_URI"));
         
         // Register services
         builder.Services.AddSingleton<DbContext>(_ => new DbContext(connection));

@@ -12,6 +12,7 @@ public partial class App : Application
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
+        DotNetEnv.Env.TraversePath().Load();
     }
 
     public override void OnFrameworkInitializationCompleted()
